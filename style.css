@@ -1,0 +1,110 @@
+:root {
+    --bg-gradient: linear-gradient(135deg, #141e30, #243b55);
+    --calc-bg: rgba(255, 255, 255, 0.05);
+    --calc-border: rgba(255, 255, 255, 0.1);
+    --text-color: #ffffff;
+    --btn-bg: rgba(255, 255, 255, 0.08);
+    --btn-hover: rgba(255, 255, 255, 0.2);
+    --op-color: #ff9f0a;
+    --alt-color: #a5a5a5;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: var(--bg-gradient);
+}
+
+.calculator {
+    width: 320px;
+    max-width: 100%;
+    background: var(--calc-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--calc-border);
+    border-radius: 24px;
+    padding: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.display {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-around;
+    padding: 20px 10px;
+    word-wrap: break-word;
+    word-break: break-all;
+    min-height: 100px;
+}
+
+.previous-operand {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 1.1rem;
+    min-height: 24px;
+}
+
+.current-operand {
+    color: var(--text-color);
+    font-size: 2.5rem;
+    font-weight: 300;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+button {
+    cursor: pointer;
+    font-size: 1.4rem;
+    border: none;
+    outline: none;
+    background: var(--btn-bg);
+    color: var(--text-color);
+    border-radius: 16px;
+    padding: 15px 0;
+    transition: all 0.2s ease;
+}
+
+button:hover {
+    background: var(--btn-hover);
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+.span-two {
+    grid-column: span 2;
+}
+
+.op-key {
+    background: rgba(255, 159, 10, 0.2);
+    color: var(--op-color);
+    font-weight: bold;
+}
+
+.op-key:hover {
+    background: rgba(255, 159, 10, 0.4);
+}
+
+.alt-key {
+    background: rgba(165, 165, 165, 0.2);
+    color: var(--alt-color);
+}
+
+.alt-key:hover {
+    background: rgba(165, 165, 165, 0.4);
+}
